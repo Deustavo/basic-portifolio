@@ -1,65 +1,49 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import { useEffect, useState } from 'react';
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
+import portifoliosContent from '../services/portifolios';
 
 export default function Home() {
+  const [portifolios, setPortifolios] = useState([]);
+
+  useEffect(() => {
+    setPortifolios(portifoliosContent)
+  }, [])
+
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Create Next App</title>
+        <title>Gabriel Henke - Cientista de dados</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <main className={styles.container}>
+        <div className={styles.apresentation}>
+          <p style={{ fontSize: '10vw' }}>Gabriel Henke</p>
+          <p style={{ fontSize: '4vw' }}>Cientista de dados</p>
+        </div>
+        <div className={styles.aboutMe}>
+          <img src="/home/profile.png" />
+          <div>
+            <p className="titlePage">Olá, eu sou o Gabriel Henke</p>
+            <p className={styles.aboutMeText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci eu lobortis elementum nibh tellus molestie nunc non. Vestibulum sed arcu non odio euismod lacinia at quis. Nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi. Odio facilisis mauris sit amet massa vitae tortor condimentum. Vel pretium lectus quam id leo in vitae turpis massa. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Varius quam quisque id diam vel quam elementum pulvinar. Et malesuada fames ac turpis egestas sed. Ut enim blandit volutpat maecenas. Aliquet risus feugiat in ante. Congue quisque egestas diam in arcu cursus. Placerat duis ultricies lacus sed. Dapibus ultrices in iaculis nunc sed augue lacus viverra. Ullamcorper malesuada proin libero nunc consequat interdum varius sit amet.</p>
+          </div>
+        </div>
+        <div className={styles.portfolio}>
+          <p className="titlePage">Meu portifólio</p>
+          <div className={styles.portfolioContainer}>
+            {portifolios.map((p, index) => 
+              <div key={index} className={styles.portfolioCard}>
+                <img src={p.image} />
+                <div style={{ padding: 24 }}>
+                  <p className={styles.portfolioCardTitle}>{p.title}</p>
+                  <p>{p.text}</p>
+                </div> 
+              </div>
+            )}
+          </div>
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+    </>
   )
 }
