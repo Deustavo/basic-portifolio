@@ -78,6 +78,26 @@
   margin-bottom: 8px;
 }
 
+.portfolioButton {
+  background: #457fca;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #5691c8, #457fca);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #5691c8, #457fca); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  color: #fff;
+  border: 0;
+  padding: 12px;
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all ease-in-out 300ms;
+}
+
+.portfolioButton:hover {
+  transform: scale(1.02);
+}
+
 @media only screen and (max-width: 1024px) {
   .portfolioContainer { flex-direction: column }
   .portfolioCard img { border-radius: 8px }

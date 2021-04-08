@@ -38,6 +38,7 @@ export default function Home() {
                 <div style={{ padding: 24 }}>
                   <p className={styles.portfolioCardTitle}>{p.title}</p>
                   <p>{p.text}</p>
+                  <button className={styles.portfolioButton}>Ver artigo completo</button>
                 </div> 
               </div>
             )}
