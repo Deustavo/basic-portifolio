@@ -1,6 +1,5 @@
 .container {
   min-height: 100vh;
-  padding: 0 10vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,6 +61,7 @@
   width: 100%;
 }
 
+.portfolioCard img { width: 22vw }
 .portfolioCard {
   display: flex;
   flex-direction: column;
@@ -70,8 +70,6 @@
   width: 22vw;
 }
 
-.portfolioCard img { width: 22vw }
-
 .portfolioCardTitle {
   font-size: 24px;
   font-weight: bold;
@@ -79,10 +77,10 @@
 }
 
 .portfolioButton {
-  background: #457fca;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #5691c8, #457fca);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #5691c8, #457fca); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+  background: #B993D6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #8CA6DB, #B993D6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   color: #fff;
   border: 0;
   padding: 12px;
@@ -96,6 +94,7 @@
 
 .portfolioButton:hover {
   transform: scale(1.02);
+  filter: brightness(0.9);
 }
 
 @media only screen and (max-width: 1024px) {
@@ -114,4 +113,41 @@
     width: 100%;
     border-radius: 0;
   }
+}
+
+
+/* Carreira */
+.carrerBackground {
+  background-color: #fff;
+  width: 110vw;
+  transform: rotate(-2deg);
+}
+
+.carrer {
+  transform: rotate(2deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120px 10vw;
+}
+
+.carrerContainer {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.carrerItem img { width: 14vw }
+.carrerItem {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  width: 18vw;
+  align-items: center;
+}
+
+.carrerTitle {
+  font-weight: bold;
+  font-size: 24px;
+  margin: 40px 0 12px 0;
 }

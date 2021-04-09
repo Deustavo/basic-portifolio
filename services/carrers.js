@@ -1,16 +1,16 @@
 export default [
     {
-        image: '/portifolio/datascience1.png',
+        image: '/carrer/graduated.png',
         title: 'Titulo do artigo',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.'
     },
     {
-        image: '/portifolio/datascience2.png',
+        image: '/carrer/data.png',
         title: 'Titulo do artigo',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.'
     },
     {
-        image: '/portifolio/datascience3.png',
+        image: '/carrer/scatter.png',
         title: 'Titulo do artigo',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.'
     }
