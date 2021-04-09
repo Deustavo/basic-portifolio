@@ -3,14 +3,17 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import portifoliosContent from '../services/portifolios';
 import carrersContent from '../services/carrers';
+import contactContent from '../services/contact';
 
 export default function Home() {
   const [portifolios, setPortifolios] = useState([]);
   const [carrers, setCarrers] = useState([]);
+  const [contact, setContact] = useState([]);
 
   useEffect(() => {
     setPortifolios(portifoliosContent);
     setCarrers(carrersContent);
+    setContact(contactContent);
   }, [])
 
   return (
@@ -50,18 +53,28 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={styles.carrerBackground}>
-          <div className={styles.carrer}>
-            <p className="titlePage">Minha carreira</p>
-            <div className={styles.carrerContainer}>
-              {carrers.map((c, index) =>
-                <div key={index} className={styles.carrerItem}>
-                  <img src={c.image} />
-                  <p className={styles.carrerTitle}>{c.title}</p>
-                  <p>{c.text}</p>
-                </div>
-              )}
-            </div>
+        <div className={styles.carrer}>
+          <p className="titlePage">Minha carreira</p>
+          <div className={styles.carrerContainer}>
+            {carrers.map((c, index) =>
+              <div key={index} className={styles.carrerItem}>
+                <img src={c.image} />
+                <p className={styles.carrerTitle}>{c.title}</p>
+                <p>{c.text}</p>
+              </div>
+            )}
+          </div>
+        </div>
+        
+        <div className={styles.contact}>
+          <p className="titlePage">Entre em contato</p>
+          <div className={styles.contactContainer}>
+            {contact.map((c, index) =>
+              <div key={index} className={styles.contactItem}>
+                <img src={c.image} />
+                <p>{c.text}</p>
+              </div>
+            )}
           </div>
         </div>
       </main>
